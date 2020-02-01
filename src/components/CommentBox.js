@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { saveComment, fetchComments } from 'actions'
 import { connect } from 'react-redux'
+import requireAuth from 'components/requireAuth'
 
 class CommentBox extends Component {
     
@@ -34,4 +35,4 @@ class CommentBox extends Component {
     }
 }
 
-export default connect(null, {saveComment, fetchComments})(CommentBox)
+export default connect(null, {saveComment, fetchComments})(requireAuth(CommentBox))
